@@ -90,4 +90,3 @@ app.listen(3000, () => {
 })
 
 
-// git remote add origin https://github.com/Arvindkumar20/BKT-Image-Generator.git
