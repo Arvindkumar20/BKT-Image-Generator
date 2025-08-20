@@ -6,22 +6,77 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+
+# Runtime environment files
 .env
-.env
-env
-dotenv
-node_modules
-dist
-dist-ssr
+.env.*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Build output
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+coverage/
+*.tsbuildinfo
+
+# Local environment
 *.local
+*.cache
+.cache-loader
+.tmp
+temp/
+tmp/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.iml
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Testing
+coverage/
+.nyc_output
+jest.cache
+jest-html-reporters-*
+
+# Package Managers
+.pnpm-store
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# VSCode
+.history/
+*.code-workspace
+
+# Other
+*.tgz
+*.tar.gz
+*.zip
+*.7z
+
+# TypeScript
+*.tsbuildinfo
