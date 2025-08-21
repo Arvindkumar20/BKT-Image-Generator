@@ -15,7 +15,11 @@ const ImageSchema = new mongoose.Schema({
         type: String,
         required: true,
         maxLength: 1000,
-        minLength:3
+        minLength: 3
+    },
+    publicId: {
+        type: String,
+        required: true
     }
 }, {
     timestamps: true
