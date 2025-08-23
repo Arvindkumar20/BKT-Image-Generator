@@ -7,10 +7,15 @@ import { ImageRouter } from "./routes/imageRoute.js";
 import { userRouter } from "./routes/userRoute.js";
 const app = express();
 app.use(express.json());
-app.use(cors({
-    origin: ["http://localhost:5173","https://dapper-axolotl-0beed0.netlify.app/"]
-}
-));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://dapper-axolotl-0beed0.netlify.app",
+    ],
+    credentials: true, // agar cookies / auth tokens bhejna ho
+  })
+);
 
 
 
