@@ -75,3 +75,47 @@ export const getImages = async (req, res) => {
 }
 
 
+export const deleteImage = async (req, res) => {
+    const { id } = req.params;
+    let image;
+    try {
+        image = await Image.findById({ _id: id })
+    } catch (error) {
+        return res.json({
+            message: "image not deleted"
+        });
+    }
+    let isDeletes;
+    try {
+        isDeletes = await cloudinary.uploader.destroy({ public_id: image.publicId });
+    } catch (error) {
+        return res.json({
+            message: error.message
+        })
+    }
+
+    if (!isDeletes) {
+        return res.json({
+            message: "image not deleted from cloudinary"
+        });
+    }
+    let deleted;
+    try {
+        deleted = await Image.findByIdAndDelete({ _id: id });
+    } catch (error) {
+        return res.json({
+            message: error.message
+        })
+    }
+if(!deleted){
+return res.json({
+            message: "image not deleted from mongo"
+        });
+}
+
+    return res.json({
+        message:"Image deleted successfully"
+    });
+}
+
+
