@@ -7,7 +7,10 @@ import { ImageRouter } from "./routes/imageRoute.js";
 import { userRouter } from "./routes/userRoute.js";
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: ["http://localhost:5173","https://dapper-axolotl-0beed0.netlify.app/"]
+}
+));
 
 
 
@@ -83,8 +86,8 @@ app.put("/api/update-data", (req, res) => {
 });
 
 // real routes 
-app.use("/api/image",ImageRouter);
-app.use("/api/user",userRouter);
+app.use("/api/image", ImageRouter);
+app.use("/api/user", userRouter);
 
 
 app.listen(3000, () => {
